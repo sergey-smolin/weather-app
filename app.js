@@ -7,7 +7,7 @@ import { getName } from 'country-list';
 dotenv.config();
 
 const app = express();
-const port = 8000; // Set the port to 8000
+const port = 8000;
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
@@ -39,7 +39,6 @@ app.get('/weather', async (req, res) => {
         const data = await response.json();
 
         if (data.cod === 200) {
-            // Get latitude and longitude
             const lat = data.coord.lat;
             const lon = data.coord.lon;
 
@@ -51,10 +50,12 @@ app.get('/weather', async (req, res) => {
 
             res.json({
                 city: data.name,
-                country: countryName, // Use the full country name
-                subdivision, // Add the subdivision (state or province) if available
+                country: countryName,
+                subdivision,
                 temperature: data.main.temp,
                 description: data.weather[0].description,
+                timezone: data.timezone,
+                icon: data.weather[0].icon 
             });
         } else {
             res.status(404).json({ error: 'City not found' });

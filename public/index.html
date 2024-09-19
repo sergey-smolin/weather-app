@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
 
     <div class="weather-container">
         <h2>Weather App</h2>
@@ -14,6 +20,8 @@
         <button onclick="getWeather()">Get Weather</button>
 
         <div class="weather-info" id="weatherInfo"></div>
+            <div class="spinner" id="loadingSpinner" style="display: none;"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

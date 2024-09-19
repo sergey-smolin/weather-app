@@ -1,6 +1,100 @@
+/* Position the toggle switch in the top right corner */
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+#cityInput {
+    background-color: #ffffff; /* Light background */
+    color: #000000; /* Dark text */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+.dark-mode #cityInput {
+    background-color: #2c2c2c; /* Dark background */
+    color: #ecf0f1; /* Light text */
+    border: 1px solid #ddd;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+}
+
+.weather-container.dark-mode {
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.weather-container input,
+.weather-container button {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.weather-container button:hover {
+    background-color: #555;
+}
+
+.weather-info.dark-mode {
+    background-color: #444;
+    color: #fff;
+}
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,4 +129,30 @@ body {
 }
 .weather-info {
     margin-top: 20px;
+    padding-top: 0;
+}
+.weather-info :first-child {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.weather-info :last-child {
+    padding-bottom: 20px;
+}
+.weather-icon {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

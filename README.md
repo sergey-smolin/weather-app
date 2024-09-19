@@ -8,6 +8,7 @@ This is a simple weather app built with **Node.js**, **Express**, and the **Open
 - **Full Location Info**: Displays the city name, administrative subdivision (if available), and full country name.
 - **Responsive Design**: Optimized for mobile, tablet, and desktop views.
 - **Enter Key Support**: Allows users to press "Enter" to fetch weather data.
+- **Dark Mode Support**: Allows to change to dark mode by using a switch
 
 ## Technologies Used
 
